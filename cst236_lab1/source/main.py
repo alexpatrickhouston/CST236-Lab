@@ -1,5 +1,5 @@
 from source.question_answer import QA
-from source.source1 import get_triangle_type, get_quadrilateral_type
+from source.shape_checker import get_triangle_type, get_4sided_type, get_rectangle_type
 
 import difflib
 NOT_A_QUESTION_RETURN = "Was that a question?"
@@ -20,7 +20,7 @@ class Interface(object):
 
         self.question_answers = {
             'What type of triangle is ': QA('What type of triangle is ', get_triangle_type),
-            'What type of quadrilateral is ': QA('What type of quadrilateral is ', get_quadrilateral_type),
+            'What type of quadrilateral is ': QA('What type of quadrilateral is ', get_4sided_type),
         }
         self.last_question = None
 
