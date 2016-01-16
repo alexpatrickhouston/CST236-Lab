@@ -1,22 +1,25 @@
 from nose2.events import Plugin
 
-class req_tracer(Plugin):
+
+class ReqTracer(Plugin):
     configSection = 'req-tracer'
 
     def afterSummaryReport(self, event):
-        with open('Project_Traces.txt', "w") as f:
-            for key,item in Requirements.items: #interate through the keys
-                f.write(key+' '+item.func_name)
-
+        with open("Project_Traces.txt", "w") as f:  # open and write to Project_Traces.txt
+            for key, item in Requirements:  # iterate through the keys
+                f.write(key + ' ' + item.func_name)
 
 
 class RequirementTrace(object):
     req_text = ""
+
     def __init__(self, text):
         self.req_text = text
         self.func_name = []
 
+
 Requirements = {}
+
 
 def requirements(req_list):
     def wrapper(func):
@@ -31,8 +34,9 @@ def requirements(req_list):
 
     return wrapper
 
-with open('Project_Requirements.txt') as f:
+
+with open("Project_Requirements.txt") as f:
     for line in f.readlines():
-        if '#00' in line:
-            req_id, desc = line.split(' ', 1)
-            Requirements[req_id] = RequirementTrace(desc)
+        if '#00' in line:  # if the line starts with #00 then
+            req_id, desc = line.split(' ', 1)  # split the line by the space between and set variables
+            Requirements[req_id] = RequirementTrace(desc)  # set the key value to be the req_id and

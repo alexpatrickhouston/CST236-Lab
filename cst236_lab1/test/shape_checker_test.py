@@ -5,66 +5,81 @@ from source.shape_checker import get_triangle_type
 from source.shape_checker import get_rectangle_type
 from source.shape_checker import get_4sided_type
 from unittest import TestCase
+from plugins.ReqTracer import requirements
 
 
 class TestGetTriangleType(TestCase):
-    """Normal Cases"""
+    # Normal Cases
+    @requirements(['#0001'])
     def test_get_triangle_equilateral_all_int(self):
         result = get_triangle_type(1, 1, 1)
         self.assertEqual(result, 'equilateral')
 
+    @requirements(['#0001'])
     def test_get_triangle_scalene_all_int(self):
         result = get_triangle_type(1, 2, 3)
         self.assertEqual(result, 'scalene')
 
+    @requirements(['#0001'])
     def test_get_triangle_isosceles_all_int(self):
         result = get_triangle_type(2, 1, 1)
         self.assertEqual(result, 'isosceles')
 
-    """Range Cases"""
+    # Range Cases
+    @requirements(['#0002'])
     def test_get_triangle_invalida_all_int(self):
         result = get_triangle_type(-1, 1, 1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0002'])
     def test_get_triangle_invalidb_all_int(self):
         result = get_triangle_type(1, -1, 1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0002'])
     def test_get_triangle_invalidc_all_int(self):
         result = get_triangle_type(1, 1, -1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0002'])
     def test_get_triangle_invalida0_all_int(self):
         result = get_triangle_type(0, 1, 1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0002'])
     def test_get_triangle_invalidb0_all_int(self):
         result = get_triangle_type(1, 0, 1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0002'])
     def test_get_triangle_invalidc0_all_int(self):
         result = get_triangle_type(1, 1, 0)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0002'])
     def test_get_triangle_invalid_all_int(self):
         result = get_triangle_type(-1, 1, 1)
         self.assertEqual(result, 'invalid')
 
-    """Invalid data type cases"""
+    # Invalid Data Type Cases
+    @requirements(['#0002'])
     def test_get_triangle_chara_all_int(self):
         result = get_triangle_type('a', 1, 1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0002'])
     def test_get_triangle_charb_all_int(self):
         result = get_triangle_type(1, 'b', 1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0002'])
     def test_get_triangle_charc_all_int(self):
         result = get_triangle_type(1, 1, 'c')
         self.assertEqual(result, 'invalid')
 
+
 class TestGetRectangleType(TestCase):
-    """Normal cases"""
+    # Normal Cases
     def test_get_rectangle_square_all_int(self):
         result = get_rectangle_type(1, 1, 1, 1)
         self.assertEqual(result, 'square')
@@ -73,7 +88,7 @@ class TestGetRectangleType(TestCase):
         result = get_rectangle_type(1, 2, 2, 1)
         self.assertEqual(result, 'rectangle')
 
-    """Range Cases"""
+    # Range Cases
     def test_get_rectangle_invalida_all_int(self):
         result = get_rectangle_type(-1, 1, 1, 1)
         self.assertEqual(result, 'invalid')
@@ -110,7 +125,7 @@ class TestGetRectangleType(TestCase):
         result = get_rectangle_type(-1, 1, 1, 1)
         self.assertEqual(result, 'invalid')
 
-    """Invalid Data type"""
+    # Invalid Data type
     def test_get_rectangle_chara_all_int(self):
         result = get_rectangle_type('a', 1, 1, 1)
         self.assertEqual(result, 'invalid')
@@ -129,7 +144,7 @@ class TestGetRectangleType(TestCase):
 
 
 class TestGet4sidedType(TestCase):
-    """Normal Cases"""
+    # Normal Cases
     def test_get_4sided_square_all_int(self):
         result = get_4sided_type(1, 1, 1, 1, 90, 90, 90, 90)
         self.assertEqual(result, 'square')
@@ -146,13 +161,13 @@ class TestGet4sidedType(TestCase):
         result = get_4sided_type(1, 2, 1, 2, 30, 60, 30, 60)
         self.assertEqual(result, 'rectangle')
 
-    """Range Cases"""
+    # Range Cases
     def test_get_4sided_invalida_all_int(self):
         result = get_4sided_type(-1, 1, 1, 1, 1, 1, 1, 1)
         self.assertEqual(result, 'invalid')
 
     def test_get_4sided_invalidb_all_int(self):
-        result = get_4sided_type(1,-1, 1, 1, 1, 1, 1, 1)
+        result = get_4sided_type(1, -1, 1, 1, 1, 1, 1, 1)
         self.assertEqual(result, 'invalid')
 
     def test_get_4sided_invalidc_all_int(self):
@@ -211,7 +226,7 @@ class TestGet4sidedType(TestCase):
         result = get_4sided_type(1, 1, 1, 1, 1, 1, 1, 0)
         self.assertEqual(result, 'invalid')
 
-    """Invalid Data types"""
+    # Invalid Data type
     def test_get_4sided_chara_all_int(self):
         result = get_4sided_type('a', 1, 1, 1, 1, 1, 1, 1)
         self.assertEqual(result, 'invalid')
