@@ -145,116 +145,144 @@ class TestGetRectangleType(TestCase):
 
 class TestGet4sidedType(TestCase):
     # Normal Cases
+    @requirements(['#0003'])
     def test_get_4sided_square_all_int(self):
         result = get_4sided_type(1, 1, 1, 1, 90, 90, 90, 90)
         self.assertEqual(result, 'square')
 
+    @requirements(['#0003'])
     def test_get_4sided_rhombus_all_int(self):
         result = get_4sided_type(1, 1, 1, 1, 120, 60, 120, 60)
         self.assertEqual(result, 'rhombus')
 
+    @requirements(['#0003'])
     def test_get_4sided_disconnect_all_int(self):
         result = get_4sided_type(1, 1, 1, 1, 121, 60, 120, 60)
         self.assertEqual(result, 'disconnect')
 
+    @requirements(['#0003'])
     def test_get_4sided_rectangle_all_int(self):
         result = get_4sided_type(1, 2, 1, 2, 30, 60, 30, 60)
         self.assertEqual(result, 'rectangle')
 
     # Range Cases
+    @requirements(['#0004', '#0005'])
     def test_get_4sided_invalida_all_int(self):
         result = get_4sided_type(-1, 1, 1, 1, 1, 1, 1, 1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0004', '#0005'])
     def test_get_4sided_invalidb_all_int(self):
         result = get_4sided_type(1, -1, 1, 1, 1, 1, 1, 1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0004', '#0005'])
     def test_get_4sided_invalidc_all_int(self):
         result = get_4sided_type(1, 1, -1, 1, 1, 1, 1, 1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0004', '#0005'])
     def test_get_4sided_invalidd_all_int(self):
         result = get_4sided_type(1, 1, 1, -1, 1, 1, 1, 1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0004', '#0005'])
     def test_get_4sided_invalidab_all_int(self):
         result = get_4sided_type(1, 1, 1, 1, -1, 1, 1, 1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0004', '#0005'])
     def test_get_4sided_invalidbc_all_int(self):
         result = get_4sided_type(1, 1, 1, 1, 1, -1, 1, 1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0004', '#0005'])
     def test_get_4sided_invalidcd_all_int(self):
         result = get_4sided_type(1, 1, 1, 1, 1, 1, -1, 1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0004', '#0005'])
     def test_get_4sided_invalidda_all_int(self):
         result = get_4sided_type(1, 1, 1, 1, 1, 1, 1, -1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0004', '#0005'])
     def test_get_4sided_invalida0_all_int(self):
         result = get_4sided_type(0, 1, 1, 1, 1, 1, 1, 1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0004', '#0005'])
     def test_get_4sided_invalidb0_all_int(self):
         result = get_4sided_type(1, 0, 1, 1, 1, 1, 1, 1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0004', '#0005'])
     def test_get_4sided_invalidc0_all_int(self):
         result = get_4sided_type(1, 1, 0, 1, 1, 1, 1, 1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0004', '#0005'])
     def test_get_4sided_invalidd0_all_int(self):
         result = get_4sided_type(1, 1, 1, 0, 1, 1, 1, 1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0004', '#0005'])
     def test_get_4sided_invalidab0_all_int(self):
         result = get_4sided_type(1, 1, 1, 1, 0, 1, 1, 1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0004', '#0005'])
     def test_get_4sided_invalidbc0_all_int(self):
         result = get_4sided_type(1, 1, 1, 1, 1, 0, 1, 1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0004', '#0005'])
     def test_get_4sided_invalidcd0_all_int(self):
         result = get_4sided_type(1, 1, 1, 1, 1, 1, 0, 1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0004', '#0005'])
     def test_get_4sided_invalidda0_all_int(self):
         result = get_4sided_type(1, 1, 1, 1, 1, 1, 1, 0)
         self.assertEqual(result, 'invalid')
 
     # Invalid Data type
+    @requirements(['#0004', '#0005'])
     def test_get_4sided_chara_all_int(self):
         result = get_4sided_type('a', 1, 1, 1, 1, 1, 1, 1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0004', '#0005'])
     def test_get_4sided_charb_all_int(self):
         result = get_4sided_type(1, 'a', 1, 1, 1, 1, 1, 1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0004', '#0005'])
     def test_get_4sided_charc_all_int(self):
         result = get_4sided_type(1, 1, 'a', 1, 1, 1, 1, 1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0004', '#0005'])
     def test_get_4sided_chard_all_int(self):
         result = get_4sided_type(1, 1, 1, 'a', 1, 1, 1, 1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0004', '#0005'])
     def test_get_4sided_charab_all_int(self):
         result = get_4sided_type(1, 1, 1, 1, 'a', 1, 1, 1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0004', '#0005'])
     def test_get_4sided_charbc_all_int(self):
         result = get_4sided_type(1, 1, 1, 1, 1, 'a', 1, 1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0004', '#0005'])
     def test_get_4sided_charcd_all_int(self):
         result = get_4sided_type(1, 1, 1, 1, 1, 1, 'a', 1)
         self.assertEqual(result, 'invalid')
 
+    @requirements(['#0004', '#0005'])
     def test_get_4sided_charda_all_int(self):
         result = get_4sided_type(1, 1, 1, 1, 1, 1, 1, 'a')
         self.assertEqual(result, 'invalid')

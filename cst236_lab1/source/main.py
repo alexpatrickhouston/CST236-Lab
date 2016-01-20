@@ -1,5 +1,5 @@
 from source.question_answer import QA
-from source.shape_checker import get_triangle_type, get_4sided_type, get_rectangle_type
+from source.shape_checker import get_triangle_type, get_4sided_type
 
 import difflib
 NOT_A_QUESTION_RETURN = "Was that a question?"
