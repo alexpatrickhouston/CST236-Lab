@@ -13,8 +13,8 @@ test = Interface()  # test interface
 class testAsk(TestCase):
     @requirements(['#0006', '#0008', '#0009'])
     def test_integer(self):
-        result = test.ask(question=2)
-        self.assertEqual(result, "Not A String?")
+        self.assertRaises(Exception, test.ask, question=2)
+
 
     @requirements(['#0007','#0019', '#0014'])
     def test_who(self):
@@ -43,7 +43,7 @@ class testAsk(TestCase):
 
     @requirements(['#0009'])
     def test_how(self):
-        result = test.ask(question="How")
+        result = test.ask(question="How do you eat a tiger ?")
         self.assertEqual(result, "I don't know, please provide the answer")
 
     @requirements(['#0007'])
