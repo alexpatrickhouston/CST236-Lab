@@ -13,8 +13,8 @@ class ReqTracer(Plugin):
     def afterSummaryReport(self, event):
         print("Req_Tracer_Running")
         with open("Project_Traces.txt", "w") as f:  # open and write to Project_Traces.txt
-            for key, item in Requirements:  # iterate through the keys
-                f.write(key + ' ' + item.func_name)
+            for key, item in Requirements.items():  # iterate through the keys
+                f.write(key + ' ' + str(item.func_name)+'\n')
 
 
 class RequirementTrace(object):
