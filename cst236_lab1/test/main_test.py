@@ -10,7 +10,7 @@ from source.main import Interface
 test = Interface()  # test interface
 
 
-class testAsk(TestCase):
+class testMain(TestCase):
     @requirements(['#0006', '#0008', '#0009'])
     def test_integer(self):
         self.assertRaises(Exception, test.ask, question=2)
