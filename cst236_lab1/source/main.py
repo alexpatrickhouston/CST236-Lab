@@ -8,7 +8,7 @@ NOT_A_QUESTION_RETURN = "Was that a question?"
 UNKNOWN_QUESTION = "I don't know, please provide the answer"
 NO_QUESTION = 'Please ask a question first'
 NO_TEACH = 'I don\'t know about that. I was taught differently'
-
+units = ('inch','mm','um','nm','cm','kilometer','mile','feet','yards','meters')
 
 class Interface(object):
     def __init__(self):
@@ -29,7 +29,7 @@ class Interface(object):
             'What is the digit of pi?': QA("What is the digit of pi?", digit_pi),
             'What is the digit of fibonacci?': QA("What is the digit of fibonacci?", fibonacci),
             'Open the door Hal!': QA("Open the door Hal!", open_door),
-            'Convert to !': QA("Convert to !", convert)
+            'Convert to': QA("Convert to", convert)
 
         }
         self.question_answers = {
@@ -40,7 +40,7 @@ class Interface(object):
             'What is the digit of pi?': QA("What is the digit of pi?", digit_pi),
             'What is the digit of fibonacci?': QA("What is the digit of fibonacci?", fibonacci),
             'Open the door Hal!': QA("Open the door Hal!", open_door),
-            'Convert to !': QA("Convert to !", convert)
+            'Convert to': QA("Convert to", convert)
 
         }
         self.last_question = None
@@ -61,9 +61,16 @@ class Interface(object):
             args = []
             for keyword in question[:-1].split(' '):
                 try:
-                    args.append(float(keyword))
+                    if keyword=="":
+                        continue
+                    elif keyword in units:
+                        args.append(keyword)
+                    else:
+                        args.append(float(keyword))
+
                 except:
                     parsed_question += "{0} ".format(keyword)
+            print(parsed_question)
             parsed_question = parsed_question[0:-1]
             self.last_question = parsed_question
             for answer in self.question_answers.values():

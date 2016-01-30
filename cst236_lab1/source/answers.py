@@ -2,7 +2,7 @@ import time
 import getpass
 import math
 
-conversion = {'feet,feet': 1, 'feet,mile': 1 / 5280, 'feet,yard': 1 / 3, 'feet,meter': 1 / 3.28084, 'feet,cm': 30.48,
+conversion = {'feet,feet': 1.0, 'feet,mile': 1.0 / 5280.0, 'feet,yard': 1 / 3, 'feet,meter': 1 / 3.28084, 'feet,cm': 30.48,
               'feet,mm': 304.8, 'feet,inch': 12, 'feet,kilometer': 1 / 3280.84, 'feet,um': 304800, 'feet,nm': 304800000,
               'mile,mile': 1, 'mile,feet': 5280 / 1, 'mile,yard': 1760, 'mile:meter': 1609.34, 'mile,cm': 160934,
               'mile,mm': 1, 'mile,inch': 1, 'mile,kilometer': 1, 'mile,um': 1, 'mile,nm': 1,
@@ -14,7 +14,7 @@ conversion = {'feet,feet': 1, 'feet,mile': 1 / 5280, 'feet,yard': 1 / 3, 'feet,m
               'cm,inch': 1, 'cm,kilometer': 1, 'cm,um': 1, 'cm,nm': 1,
               'mm,mm': 1, 'mm,yard': 1, 'mm,feet': 3, 'mm,mile': 1 / 1760, 'mm,meter': 1 / 1.09361, 'mm,cm': 1,
               'mm,inch': 1, 'mm,kilometer': 1, 'mm,um': 1, 'mm,nm': 1,
-              'inch,inch': 1, 'inch,yard': 1, 'inch,feet': 3, 'inch,mile': 1 / 1760, 'inch,meter': 1 / 1.09361,
+              'inch,inch': 1.0, 'inch,yard': 1/36, 'inch,feet': 1.0/12.0, 'inch,mile': 1 / 1760, 'inch,meter': 1 / 1.09361,
               'inch,cm': 1, 'inch,mm': 1, 'inch,kilometer': 1, 'inch,um': 1, 'inch,nm': 1,
               'kilometer,kilometer': 1, 'kilometer,yard': 1, 'kilometer,feet': 3, 'kilometer,mile': 1 / 1760,
               'kilometer,meter': 1 / 1.09361, 'kilometer,cm': 1, 'kilometer,mm': 1, 'kilometer,inch': 1,
@@ -45,7 +45,7 @@ def open_door():  # I'm sorry I can't do that
 
 def digit_pi(n):
     pi_value = math.pi
-    pi_value *= 10 ^ n
+    pi_value *= 10 ** n
     pi_value %= 10
     return n;
 
@@ -56,4 +56,5 @@ def life():  # Enlighten yourself you pig in human clothing
 
 def convert(value, type1, type2):
     value *= conversion[type1 + ',' + type2]
+    print value
     return value;

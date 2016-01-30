@@ -39,12 +39,12 @@ class testAnswers(TestCase):
     @story(
             'When I ask "Convert <number> <units> to <units>" I want to receive the converted value and units so I can know the answer.')
     def test_convert(self):
-        result = test.ask(question="Convert 1 foot to inches!")
+        result = test.ask(question="Convert 1 feet to inch!")
         self.assertEqual(result, 12)
 
     @story('When I ask for a numberic conversion I want at least 10 different units I can convert from/to')
     def test_type1(self):
-        result = test.ask(question="Convert 12 inches to feet!")
+        result = test.ask(question="Convert 12 inch to feet!")
         self.assertEqual(result, 1)
 
     @story('When I ask for a numberic conversion I want at least 10 different units I can convert from/to')
@@ -54,7 +54,7 @@ class testAnswers(TestCase):
 
     @story('When I ask for a numberic conversion I want at least 10 different units I can convert from/to')
     def test_type3(self):
-        result = test.ask(question="Convert 12 inches to feet!")
+        result = test.ask(question="Convert 12 inch to feet!")
         self.assertEqual(result, 1)
 
     @story('When I ask for a numberic conversion I want at least 10 different units I can convert from/to')
@@ -63,7 +63,7 @@ class testAnswers(TestCase):
         self.assertEqual(result, 5280)
     @story('When I ask for a numberic conversion I want at least 10 different units I can convert from/to')
     def test_type5(self):
-        result = test.ask(question="Convert 12 inches to feet!")
+        result = test.ask(question="Convert 12 inch to feet!")
         self.assertEqual(result, 1)
 
     @story('When I ask for a numberic conversion I want at least 10 different units I can convert from/to')
@@ -72,7 +72,7 @@ class testAnswers(TestCase):
         self.assertEqual(result, 5280)
     @story('When I ask for a numberic conversion I want at least 10 different units I can convert from/to')
     def test_type7(self):
-        result = test.ask(question="Convert 12 inches to feet!")
+        result = test.ask(question="Convert 12 inch to feet!")
         self.assertEqual(result, 1)
 
     @story('When I ask for a numberic conversion I want at least 10 different units I can convert from/to')
@@ -81,7 +81,7 @@ class testAnswers(TestCase):
         self.assertEqual(result, 5280)
     @story('When I ask for a numberic conversion I want at least 10 different units I can convert from/to')
     def test_type9(self):
-        result = test.ask(question="Convert 12 inches to feet!")
+        result = test.ask(question="Convert 12 inch to feet!")
         self.assertEqual(result, 1)
 
     @story('When I ask for a numberic conversion I want at least 10 different units I can convert from/to')
