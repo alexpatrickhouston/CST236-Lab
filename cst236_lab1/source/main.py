@@ -1,6 +1,6 @@
 from source.question_answer import QA
 from source.shape_checker import get_triangle_type, get_4sided_type
-from source.answers import what_time, life, fibonacci, open_door, clear_memory, convert, digit_pi
+from source.answers import what_time, life, fibonacci, open_door, convert, digit_pi
 
 import difflib
 
@@ -29,8 +29,7 @@ class Interface(object):
             'What is the digit of pi?': QA("What is the digit of pi?", digit_pi),
             'What is the digit of fibonacci?': QA("What is the digit of fibonacci?", fibonacci),
             'Open the door Hal!': QA("Open the door Hal!", open_door),
-            'Please clear memory!': QA("Please clear memory!", clear_memory),
-            'Convert to': QA("Convert to", convert)
+            'Convert to !': QA("Convert to !", convert)
 
         }
         self.question_answers = {
@@ -41,8 +40,7 @@ class Interface(object):
             'What is the digit of pi?': QA("What is the digit of pi?", digit_pi),
             'What is the digit of fibonacci?': QA("What is the digit of fibonacci?", fibonacci),
             'Open the door Hal!': QA("Open the door Hal!", open_door),
-            'Please clear memory!': QA("Please clear memory!", clear_memory),
-            'Convert to': QA("Convert to", convert)
+            'Convert to !': QA("Convert to !", convert)
 
         }
         self.last_question = None
@@ -51,7 +49,10 @@ class Interface(object):
         if not isinstance(question, str):
             self.last_question = None
             raise Exception('Not A String!')
-        if question[-1] != self.question_mark and question[-1] != self.exclamation_mark or question.split(' ')[
+        if question == 'Please clear memory!':
+            self.clear()
+            return "Memory cleared"
+        elif question[-1] != self.question_mark and question[-1] != self.exclamation_mark or question.split(' ')[
             0] not in self.keywords:
             self.last_question = None
             return NOT_A_QUESTION_RETURN
