@@ -27,3 +27,12 @@
 * When I ask "Convert <number> <units> to <units>" I want to receive the converted value and units so I can know the answer.
 * When I ask for a numberic conversion I want at least 10 different units I can convert from/to
 * When I ask "What is the meaning of life?" I want the application to say "42" so that I may be enlightened
+* When I tell "My birthday is on <month> <day>" I want the application to respond with my star sign so I dont have to look it up online
+* When I ask "What is love?" I want the application to say "Baby dont hurt me!", to let me know that computers have feelings too!
+* When I ask "What is <number> divided by <number>?", I want the application to give me the answer so I dont have to think
+* When I ask "What is <number> plus <number>?", I want the application to give me the answer so I dont have to think
+* When I ask "What is <number> minus <number>?", I want the application to give me the answer so I dont have to think
+* When I ask "What is <number> times <number>?", I want the application to give me the answer so I dont have to think
+* When I ask "What is the square root of <number>?", I want the application to give me the square root of the number given so I dont have to think
+* When I ask "What is the name of this computer?", I want the application to give me the name of the computer so I dont have to look it up
+* When I ask "What is my lucky number?", I want the application to give me a random number 1-10, to fuel my gambling addiction

@@ -1,6 +1,7 @@
 from source.question_answer import QA
 from source.shape_checker import get_triangle_type, get_4sided_type
-from source.answers import what_time, life, fibonacci, open_door, convert, digit_pi
+from source.answers import what_time, life, fibonacci, open_door, convert, digit_pi, lucky_number, square_root, computer_name, star_sign, divide, subtract, love, multiply, add
+
 
 import difflib
 
@@ -8,7 +9,7 @@ NOT_A_QUESTION_RETURN = "Was that a question?"
 UNKNOWN_QUESTION = "I don't know, please provide the answer"
 NO_QUESTION = 'Please ask a question first'
 NO_TEACH = 'I don\'t know about that. I was taught differently'
-units = ('inch','mm','um','nm','cm','kilometer','mile','feet','yards','meters')
+question_values = ('inch','mm','um','nm','cm','kilometer','mile','feet','yards','meters','January','February','March','April','May','June','July','August','September','October','November','December')
 
 class Interface(object):
     def __init__(self):
@@ -18,7 +19,7 @@ class Interface(object):
         self.where_dict = {}
         self.who_dict = {}
 
-        self.keywords = ['How', 'What', 'Where', 'Who', 'Why', 'Convert', 'Please', 'Open']
+        self.keywords = ['How', 'What', 'Where', 'Who', 'Why', 'Convert', 'Please', 'Open','My']
         self.question_mark = chr(0x3F)
         self.exclamation_mark = chr(0x21)
         self.backup_questions = {
@@ -29,7 +30,16 @@ class Interface(object):
             'What is the digit of pi?': QA("What is the digit of pi?", digit_pi),
             'What is the digit of fibonacci?': QA("What is the digit of fibonacci?", fibonacci),
             'Open the door Hal!': QA("Open the door Hal!", open_door),
-            'Convert to': QA("Convert to", convert)
+            'Convert to': QA("Convert to", convert),
+            'What is my lucky number?': QA("What is my lucky number?", lucky_number),
+            'What is divded by ?': QA('What is divided by ?', divide),
+            'What is plus ?': QA('What is plus ?', add),
+            'What is minus ?': QA('What is minus ?', subtract),
+            'What is times ?': QA('What is times ?', multiply),
+            'What is love?': QA('What is love?', love),
+            'What is my computers name?': QA('What is my computers name?', computer_name),
+            'My birthday is on !':QA('My birthday is on !', star_sign),
+            'What is the square root of ?': QA('What is the sqaure root of ?', square_root)
 
         }
         self.question_answers = {
@@ -40,7 +50,16 @@ class Interface(object):
             'What is the digit of pi?': QA("What is the digit of pi?", digit_pi),
             'What is the digit of fibonacci?': QA("What is the digit of fibonacci?", fibonacci),
             'Open the door Hal!': QA("Open the door Hal!", open_door),
-            'Convert to': QA("Convert to", convert)
+            'Convert to': QA("Convert to", convert),
+            'What is my lucky number?': QA("What is my lucky number?", lucky_number),
+            'What is divded by ?': QA('What is divided by ?', divide),
+            'What is plus ?': QA('What is plus ?', add),
+            'What is minus ?': QA('What is minus by ?', subtract),
+            'What is times ?': QA('What is times ?', multiply),
+            'What is love?': QA('What is love?', love),
+            'What is my computers name?': QA('What is my computers name?', computer_name),
+            'My birthday is on !':QA('My birthday is on !', star_sign),
+            'What is the square root of ?': QA('What is the sqaure root of ?', square_root)
 
         }
         self.last_question = None
@@ -63,7 +82,7 @@ class Interface(object):
                 try:
                     if keyword=="":
                         continue
-                    elif keyword in units:
+                    elif keyword in question_values:
                         args.append(keyword)
                     else:
                         args.append(float(keyword))

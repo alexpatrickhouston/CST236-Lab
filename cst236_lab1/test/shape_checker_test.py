@@ -10,9 +10,20 @@ from plugins.ReqTracer import requirements
 
 class TestGetTriangleType(TestCase):
     # Normal Cases
+
     @requirements(['#0001'])
     def test_get_triangle_equilateral_all_int(self):
         result = get_triangle_type(1, 1, 1)
+        self.assertEqual(result, 'equilateral')
+
+    @requirements(['#0001'])
+    def test_get_triangle_list_all_int(self):
+        result = get_triangle_type([1, 1, 1])
+        self.assertEqual(result, 'equilateral')
+
+    @requirements(['#0001'])
+    def test_get_triangle_dictionary_all_int(self):
+        result = get_triangle_type({'a': 1, 'b': 1, 'c': 1})
         self.assertEqual(result, 'equilateral')
 
     @requirements(['#0001'])
@@ -80,10 +91,22 @@ class TestGetTriangleType(TestCase):
 
 class TestGetRectangleType(TestCase):
     # Normal Cases
+    @requirements(['#0003'])
+    def test_get_rectangle_list_int(self):
+        result = get_rectangle_type([1, 1, 1, 1])
+        self.assertEqual(result, 'square')
+
+    @requirements(['#0003'])
+    def test_get_rectangle_dictionary_int(self):
+        result = get_rectangle_type({'a': 1, 'b': 1, 'c': 1, 'd': 1})
+        self.assertEqual(result, 'square')
+
+    @requirements(['#0003'])
     def test_get_rectangle_square_all_int(self):
         result = get_rectangle_type(1, 1, 1, 1)
         self.assertEqual(result, 'square')
 
+    @requirements(['#0003'])
     def test_get_rectangle_rectangle_all_int(self):
         result = get_rectangle_type(1, 2, 2, 1)
         self.assertEqual(result, 'rectangle')
@@ -145,6 +168,16 @@ class TestGetRectangleType(TestCase):
 
 class TestGet4sidedType(TestCase):
     # Normal Cases
+    @requirements(['#0003'])
+    def test_get_4sided_list_int(self):
+        result = get_4sided_type([1, 1, 1, 1, 90, 90, 90, 90])
+        self.assertEqual(result, 'square')
+
+    @requirements(['#0003'])
+    def test_get_4sided_dictionary_int(self):
+        result = get_4sided_type({'a': 1, 'b': 1, 'c': 1, 'd': 1, 'ab': 90, 'bc': 90, 'cd': 90, 'da': 90})
+        self.assertEqual(result, 'square')
+
     @requirements(['#0003'])
     def test_get_4sided_square_all_int(self):
         result = get_4sided_type(1, 1, 1, 1, 90, 90, 90, 90)

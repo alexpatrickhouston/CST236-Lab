@@ -15,7 +15,19 @@ class testMain(TestCase):
     def test_integer(self):
         self.assertRaises(Exception, test.ask, question=2)
 
+    def test_correct(self):
+        result = test.ask("What is the a dog?")
+        result = test.correct("A bucket of joy")
+        result = test.ask("What is the a dog?")
+        self.assertEqual(result,"A bucket of joy")
 
+    def test_invalid_correct(self):
+        result = test.correct("Blarg")
+        self.assertEqual(result,"Please ask a question first")
+
+    def test_too_many_params(self):
+        self.assertRaises(Exception,test.ask,"What type of triangle is 1 1 1 1 1?")
+        
     @requirements(['#0007','#0019', '#0014','#0015'])
     def test_who(self):
         result = test.ask(question="Who ?")
