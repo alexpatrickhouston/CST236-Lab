@@ -19,6 +19,11 @@
 #0019 The system shall provide a means of updating an answer to the previously asked question.
 #0020 The system shall accept and store answers to previous questions in the form of a string or a function pointer and store it as the generator function.
 #0021 If no previous question has been asked the system shall respond with "Please ask a question first"
+#0100 The system shall return 'Yes' or 'No' when asked 'Is the <file path> in the repo?'
+#0101 The system shall return one of the following when asked 'What is the status of <file path>?' - <file path> has been modified local- <file path> has not been checked in- <file path> is a dirty repo- <file path> is up to date
+#0102 The system shall return '<hash>, <date modified>, <author>' when asked 'What is the deal with <file path>?'
+#0103 The system shall return the repo branch when asked 'What branch is <file path>?'
+#0104 The system shall return the repo url when asked 'Where did <file path> come from?'
 * When I ask "What time is it?" I want to be given the current date/time so I can stay up to date
 * When I ask "What is the n digit of fibonacci" I want to receive the answer so I dont have to figure it out myself
 * When I ask "What is the n digit of pi" I want to receive the answer so I dont have to figure it out myself

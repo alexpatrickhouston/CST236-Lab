@@ -1,7 +1,7 @@
 from source.question_answer import QA
 from source.shape_checker import get_triangle_type, get_4sided_type
 from source.answers import what_time, life, fibonacci, open_door, convert, digit_pi, lucky_number, square_root, computer_name, star_sign, divide, subtract, love, multiply, add
-
+from source.git_utils import is_file_in_repo, get_git_file_info, get_file_info, get_repo_branch, get_repo_url
 
 import difflib
 
@@ -39,7 +39,12 @@ class Interface(object):
             'What is love?': QA('What is love?', love),
             'What is my computers name?': QA('What is my computers name?', computer_name),
             'My birthday is on !':QA('My birthday is on !', star_sign),
-            'What is the square root of ?': QA('What is the sqaure root of ?', square_root)
+            'What is the square root of ?': QA('What is the sqaure root of ?', square_root),
+            'Is the in the repo': QA('Is the in the repo', is_file_in_repo),
+            'What is the status of ?': QA('What is the status of?', get_git_file_info),
+            'What is the deal with ?': QA('What is the deal with ?', get_file_info),
+            'What branch is ?': QA('What branch is ?', get_repo_branch),
+            'Where did come from?': QA('Where did come from?', get_repo_url)
 
         }
         self.question_answers = {
@@ -59,7 +64,12 @@ class Interface(object):
             'What is love?': QA('What is love?', love),
             'What is my computers name?': QA('What is my computers name?', computer_name),
             'My birthday is on !':QA('My birthday is on !', star_sign),
-            'What is the square root of ?': QA('What is the sqaure root of ?', square_root)
+            'What is the square root of ?': QA('What is the sqaure root of ?', square_root),
+            'Is the in the repo': QA('Is the in the repo', is_file_in_repo),
+            'What is the status of ?': QA('What is the status of?', get_git_file_info),
+            'What is the deal with ?': QA('What is the deal with ?', get_file_info),
+            'What branch is ?': QA('What branch is ?', get_repo_branch),
+            'Where did come from?': QA('Where did come from?', get_repo_url)
 
         }
         self.last_question = None
