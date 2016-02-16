@@ -10,30 +10,38 @@ class Git_Utils_Test(TestCase):
 
     @patch('subprocess.Popen')
     @requirements(['#0100'])
-    def test_valid_path(self, mock_sub_popen):
+    def test_invalid_path(self, mock_sub_popen):
         self.assertEqual(1, 1);
+        process_mock = Mock()
+        attrs = {'communicate.return_value': ('ouput', 'error')}
+        process_mock.configure_mock(**attrs)
+        mock_sub_popen.return_value = process_mock
+        self.assertRaises(Exception, test.ask,'What is the deal with <blarg>?');
 
     @patch('subprocess.Popen')
     @requirements(['#0100'])
-    def test_invalid_path(self, mock_sub_popen):
-        self.assertEqual(1, 1);
-
-    # @patch('subprocess.Popen')
-    @requirements(['#0100'])
-    def test_file_in_repo(self):
-        result = test.ask(question='Is <Documents\GitHub\AlexH\cst236lab1> in the repo?')
+    def test_file_in_repo(self, mock_sub_popen):
+        process_mock = Mock()
+        attrs = {'communicate.return_value': ('ouput', 'error')}
+        process_mock.configure_mock(**attrs)
+        mock_sub_popen.return_value = process_mock
+        result = test.ask(question='Is <E:\Hearthstone\client.config> in the repo?')
         self.assertEqual(result, "Yes");
 
     @patch('subprocess.Popen')
     @requirements(['#0100'])
     def test_file_not_in_repo(self, mock_sub_popen):
-        self.assertEqual(1, 1);
+        process_mock = Mock()
+        attrs = {'communicate.return_value': ('ouput', 'error')}
+        process_mock.configure_mock(**attrs)
+        mock_sub_popen.return_value = process_mock
+        test.ask(question='Is <blarg> in the repo?')
+        self.assertFalse(mock_sub_popen.called);
 
     @patch('subprocess.Popen')
     @requirements(['#0101'])
     def test_repo_is_dirty_true(self, mock_sub_popen):
         self.assertEqual(1, 1);
-
     @patch('subprocess.Popen')
     @requirements(['#0101'])
     def test_repo_is_dirty_false(self, mock_sub_popen):
@@ -62,7 +70,12 @@ class Git_Utils_Test(TestCase):
     @patch('subprocess.Popen')
     @requirements(['#0102'])
     def test_get_file_info(self, mock_sub_popen):
-        self.assertEqual(1, 1);
+        process_mock = Mock()
+        attrs = {'communicate.return_value': ('ouput', 'error')}
+        process_mock.configure_mock(**attrs)
+        mock_sub_popen.return_value = process_mock
+        test.ask(question='What is the status of <E:\Hearthstone\client.config>?')
+        self.assertFalse(mock_sub_popen.called);
 
     @patch('subprocess.Popen')
     @requirements(['#0101'])

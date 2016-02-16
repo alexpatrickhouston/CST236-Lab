@@ -115,6 +115,8 @@ class Interface(object):
                             print args
                             return answer.function(*args)
                         except Exception as ex:
+                            import traceback
+                            traceback.print_exc()
                             print ex.message
                             print args
                             raise Exception("Too many extra parameters")

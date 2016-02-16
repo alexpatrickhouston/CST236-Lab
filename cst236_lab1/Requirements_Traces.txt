@@ -13,7 +13,7 @@
 #0103 ['test_get_repo_branch']
 #0102 ['test_get_file_info']
 #0101 ['test_get_diff_files_nonstaged', 'test_get_diff_files_staged', 'test_get_repo_root', 'test_has_diff_files_false', 'test_has_diff_files_true', 'test_has_untracked_files_false', 'test_has_untracked_files_true', 'test_repo_is_dirty_false', 'test_repo_is_dirty_true']
-#0100 ['test_file_in_repo', 'test_file_not_in_repo', 'test_invalid_path', 'test_valid_path']
+#0100 ['test_file_in_repo', 'test_file_not_in_repo', 'test_invalid_path']
 #0015 ['test_how', 'test_what', 'test_where', 'test_who', 'test_why']
 #0014 ['test_how', 'test_what', 'test_where', 'test_who', 'test_why']
 #0017 ['test_no_question']
