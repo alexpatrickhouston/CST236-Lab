@@ -2,7 +2,6 @@ from source.question_answer import QA
 from source.shape_checker import get_triangle_type, get_4sided_type
 from source.answers import what_time, life, fibonacci, open_door, convert, digit_pi, lucky_number, square_root, computer_name, star_sign, divide, subtract, love, multiply, add
 from source.git_utils import is_file_in_repo, get_git_file_info, get_file_info, get_repo_branch, get_repo_url
-
 import difflib
 
 NOT_A_QUESTION_RETURN = "Was that a question?"
@@ -19,7 +18,7 @@ class Interface(object):
         self.where_dict = {}
         self.who_dict = {}
 
-        self.keywords = ['How', 'What', 'Where', 'Who', 'Why', 'Convert', 'Please', 'Open','My']
+        self.keywords = ['How', 'What', 'Where', 'Who', 'Why', 'Convert', 'Please', 'Open','My' ,'Is']
         self.question_mark = chr(0x3F)
         self.exclamation_mark = chr(0x21)
         self.backup_questions = {
@@ -40,7 +39,7 @@ class Interface(object):
             'What is my computers name?': QA('What is my computers name?', computer_name),
             'My birthday is on !':QA('My birthday is on !', star_sign),
             'What is the square root of ?': QA('What is the sqaure root of ?', square_root),
-            'Is the in the repo': QA('Is the in the repo', is_file_in_repo),
+            'Is in the repo?': QA('Is in the repo?', is_file_in_repo),
             'What is the status of ?': QA('What is the status of?', get_git_file_info),
             'What is the deal with ?': QA('What is the deal with ?', get_file_info),
             'What branch is ?': QA('What branch is ?', get_repo_branch),
@@ -65,7 +64,7 @@ class Interface(object):
             'What is my computers name?': QA('What is my computers name?', computer_name),
             'My birthday is on !':QA('My birthday is on !', star_sign),
             'What is the square root of ?': QA('What is the sqaure root of ?', square_root),
-            'Is the in the repo': QA('Is the in the repo', is_file_in_repo),
+            'Is in the repo?': QA('Is in the repo?', is_file_in_repo),
             'What is the status of ?': QA('What is the status of?', get_git_file_info),
             'What is the deal with ?': QA('What is the deal with ?', get_file_info),
             'What branch is ?': QA('What branch is ?', get_repo_branch),
@@ -94,6 +93,11 @@ class Interface(object):
                         continue
                     elif keyword in question_values:
                         args.append(keyword)
+                    elif keyword[0] == '<' and keyword[-1] == '>':
+                        print("This keyword was removed :"+keyword);
+                        args.append(keyword[1:-1])
+                        print("This keyword was removed :"+keyword);
+
                     else:
                         args.append(float(keyword))
 
@@ -112,6 +116,7 @@ class Interface(object):
                             return answer.function(*args)
                         except Exception as ex:
                             print ex.message
+                            print args
                             raise Exception("Too many extra parameters")
             else:
                 return UNKNOWN_QUESTION

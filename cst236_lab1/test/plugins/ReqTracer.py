@@ -70,7 +70,7 @@ def story(js):
 with open('Project_Requirements.txt') as f:
     for line in f.readlines():
         # print("Req_Tracer_Running")
-        if '#00' in line:  # if the line starts with #00 then
+        if '#0' in line:  # if the line starts with #00 then
             req_id, desc = line.split(' ', 1)  # split the line by the space between and set variables
             Requirements[req_id] = RequirementTrace(desc)  # set the key value to be the req_id and
         if '*' in line:
