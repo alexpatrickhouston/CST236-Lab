@@ -27,7 +27,7 @@ class Git_Utils_Test(TestCase):
         attrs = {'communicate.return_value': ('ouput', 'error')}
         process_mock.configure_mock(**attrs)
         mock_sub_popen.return_value = process_mock
-        result = test.ask(question='Is <E:\Hearthstone\client.config> in the repo?')
+        result = test.ask(question='Is <requirements.txt> in the repo?')
         self.assertTrue(mock_sub_popen.called);
 
     @patch('subprocess.Popen')
@@ -47,7 +47,7 @@ class Git_Utils_Test(TestCase):
         attrs = {'communicate.return_value': ('ouput', 'error')}
         process_mock.configure_mock(**attrs)
         mock_sub_popen.return_value = process_mock
-        test.ask(question='What is the status of <E:\Hearthstone\client.config>?')
+        test.ask(question='What is the status of <requirements.txt>?')
         self.assertTrue(mock_sub_popen.called);
 
     @patch('subprocess.Popen')
@@ -57,7 +57,7 @@ class Git_Utils_Test(TestCase):
         attrs = {'communicate.return_value': ('ouput', 'error')}
         process_mock.configure_mock(**attrs)
         mock_sub_popen.return_value = process_mock
-        test.ask(question='What is the deal with <C:\Python27\AlexH\cst236_lab1>?');
+        test.ask(question='What is the deal with <requirements.txt>?');
         self.assertTrue(mock_sub_popen.called);
 
 
@@ -68,7 +68,7 @@ class Git_Utils_Test(TestCase):
         attrs = {'communicate.return_value': ('ouput', 'error')}
         process_mock.configure_mock(**attrs)
         mock_sub_popen.return_value = process_mock
-        test.ask(question='What branch is <E:\Hearthstone\client.config>?')
+        test.ask(question='What branch is <test\main_test.py>?')
         self.assertTrue(mock_sub_popen.called);
 
     @patch('subprocess.Popen')
@@ -88,7 +88,7 @@ class Git_Utils_Test(TestCase):
         attrs = {'communicate.return_value': ('ouput', 'error')}
         process_mock.configure_mock(**attrs)
         mock_sub_popen.return_value = process_mock
-        test.ask(question='Where did <E:\Hearthstone\client.config> come from?')
+        test.ask(question='Where did <Job_Story_Traces.txt> come from?')
         self.assertTrue(mock_sub_popen.called);
 
     @patch('subprocess.Popen')
@@ -121,6 +121,3 @@ class Git_Utils_Test(TestCase):
         mock_sub_popen.return_value = process_mock
         test.ask(question='What is the status of <unchecked.txt>?')
         self.assertTrue(mock_sub_popen.called);
-
-    @patch("has_diff_files")
-    def
