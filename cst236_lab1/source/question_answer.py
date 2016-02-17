@@ -7,3 +7,4 @@ class QA(object):
             self.function = answer
         else:
             self.value = answer
+            # blarg
