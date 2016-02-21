@@ -1,7 +1,7 @@
 from source.question_answer import QA
 from source.shape_checker import get_triangle_type, get_4sided_type
 from source.answers import what_time, life, fibonacci, open_door, convert, digit_pi, lucky_number, square_root, computer_name, star_sign, divide, subtract, love, multiply, add
-from source.git_utils import is_file_in_repo, get_git_file_info, get_file_info, get_repo_branch, get_repo_url
+from source.git_utils import is_file_in_repo,has_untracked_files, has_diff_files, get_git_file_info, get_file_info, get_repo_branch, get_repo_url
 import difflib
 
 NOT_A_QUESTION_RETURN = "Was that a question?"

@@ -44,6 +44,7 @@ def get_git_file_info(path):
     """
     if not os.path.isabs(path): # Test case #1
         path = os.path.abspath(path)
+    print path
     test_repo = os.path.dirname(path)
     if path in get_diff_files(test_repo): # Test case #2
         git_logger.warning('%s is modified locally', path)
@@ -73,6 +74,8 @@ def is_repo_dirty(path, include_untracked=False):
     :return: True if dirty, False otherwise
     :rtype: bool
     """
+    print has_diff_files
+    print type(has_diff_files)
     if has_diff_files(path=path) or (include_untracked and has_untracked_files(path)):
         return True
 
