@@ -3,6 +3,7 @@ from source.shape_checker import get_triangle_type, get_4sided_type
 from source.answers import what_time, life, fibonacci, open_door, convert, digit_pi, lucky_number, square_root, computer_name, star_sign, divide, subtract, love, multiply, add
 from source.git_utils import is_file_in_repo,has_untracked_files, has_diff_files, get_git_file_info, get_file_info, get_repo_branch, get_repo_url
 import difflib
+import time
 
 NOT_A_QUESTION_RETURN = "Was that a question?"
 UNKNOWN_QUESTION = "I don't know, please provide the answer"
@@ -72,8 +73,14 @@ class Interface(object):
 
         }
         self.last_question = None
-
+        f =open("output.txt", 'w')
+        f.write("")
+        f.close()
+        f= open("timing.txt",'w')
+        f.write("")
+        f.close()
     def ask(self, question=""):
+
         if not isinstance(question, str):
             self.last_question = None
             raise Exception('Not A String!')
@@ -113,7 +120,21 @@ class Interface(object):
                     else:
                         try:
                             print args
-                            return answer.function(*args)
+                            x= answer.function(*args)
+                            print(x)
+                            xstring = str(x)
+                            time_start =time.clock()
+                            f =open("output.txt", 'a')
+                            f.write(question+":"+xstring+"\n")
+                            f.close()
+                            time_end =time.clock()
+                            time_final =str(time_end-time_start)
+                            f =open("timing.txt", "a")
+                            f.write(question+":"+xstring+" Timing:"+time_final+"\n")
+                            return x
+
+
+
                         except Exception as ex:
                             import traceback
                             traceback.print_exc()

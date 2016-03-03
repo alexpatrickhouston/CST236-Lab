@@ -290,7 +290,7 @@ class testAnswers(TestCase):
 
     @story(
             'When I tell "My birthday is on <month> <day>" I want the application to respond with my star sign so I dont have to look it up online')
-    def test_star_sign_invalid(self):
+    def test_star_sign__december_invalid(self):
         result = test.ask(question="My birthday is on December 289!")
         self.assertEqual(result, "Not Valid date")
 

@@ -1,0 +1,70 @@
+What is 2 plus 2?:4.0
+What is my computers name?:The name of this computer is W207-3020-05
+Convert 1 feet to inch!:12.0
+What is 2 divided by 2?:1.0
+What is the 7 digit of fibonacci?:13
+What is the meaning of life?:42
+What is love?:Baby Don't hurt me!!
+What is my lucky number?:18
+What is 2 minus 2?:0.0
+What is 2 times 2?:4.0
+Open the door hal!:Im afraid I cant do that alex.houston!
+What is the 6 digit of pi?:6.0
+What is the square root of 4?:2.0
+My birthday is on December 289!:Not Valid date
+My birthday is on April 8!:You are a Aries
+My birthday is on April 299!:Not Valid date
+My birthday is on April 29!:You are a Taurus
+My birthday is on August 289!:Not Valid date
+My birthday is on August 8!:You are a Leo
+My birthday is on August 28!:You are a Virgo
+My birthday is on December 28!:You are a Capricorn
+My birthday is on December 8!:You are a Sagittarius
+My birthday is on February 8!:You are a Aquarius
+My birthday is on February 300!:Not Valid date
+My birthday is on February 29!:You are a Pisces
+My birthday is on 8 6!:Please Enter a valid month
+My birthday is on January 30!:You are a Aquarius
+My birthday is on January 8!:You are a Capricorn
+My birthday is on January 300!:Not Valid date
+My birthday is on July 8!:You are a Cancer
+My birthday is on July 289!:Not Valid date
+My birthday is on July 28!:You are a Leo
+My birthday is on June 28!:You are a Cancer
+My birthday is on June 8!:You are a Gemini
+My birthday is on June 289!:Not Valid date
+My birthday is on March 30!:You are a Aries
+My birthday is on March 300!:Not Valid date
+My birthday is on March 8!:You are a Pisces
+My birthday is on May 29!:You are a Gemini
+My birthday is on May 299!:Not Valid date
+My birthday is on May 8!:You are a Taurus
+My birthday is on November 289!:Not Valid date
+My birthday is on November 28!:You are a Sagittarius
+My birthday is on November 8!:You are a Scorpio
+My birthday is on October 289!:Not Valid date
+My birthday is on October 8!:You are a Libra
+My birthday is on October 28!:You are a Scorpio
+My birthday is on September 298!:Not Valid date
+My birthday is on September 28!:You are a Libra
+My birthday is on September 8!:You are a Virgo
+Convert 12 inch to feet!:1.0
+Convert 1 mile to feet!:5280.0
+Convert 1 inch to feet!:0.0833333333333
+Convert 12 inch to feet!:1.0
+Convert 1 mile to feet!:5280.0
+Convert 12 inch to feet!:1.0
+Convert 1 mile to feet!:5280.0
+Convert 12 inch to feet!:1.0
+Convert 1 mile to feet!:5280.0
+Convert 12 inch to feet!:1.0
+What time is it?:10:24
+Is <requirements.txt> in the repo?:Yes
+Is <blarg> in the repo?:No
+What is the status of <requirements.txt>?:requirements.txt is a dirty repo
+What branch is <test\main_test.py>?:ouput
+Where did <Job_Story_Traces.txt> come from?:ouput
+Is <requirements.txt> in the repo?:Yes
+What is the status of <requirements.txt>?:requirements.txt is a dirty repo
+What is the status of <unchecked.txt>?:unchecked.txt is a dirty repo
+What is the deal with <requirements.txt>?:ouput

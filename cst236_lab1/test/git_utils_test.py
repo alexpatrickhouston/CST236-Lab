@@ -149,7 +149,7 @@ class Git_Utils_Test(TestCase):
     @patch("source.git_utils.get_untracked_files")
     def test_up_to_date(self,mock_dirty,mock_get_diff,mock_get_untracked):
         mock_get_diff.return_value = []
-        mock_get_untracked.return_value = True
+        mock_get_untracked.return_value = []
         mock_dirty.return_value =[]
         get_git_file_info("requirements.txt")
 

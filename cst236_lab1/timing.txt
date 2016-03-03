@@ -1,0 +1,70 @@
+What is 2 plus 2?:4.0 Timing:0.000740540305174
+What is my computers name?:The name of this computer is W207-3020-05 Timing:0.000662474107526
+Convert 1 feet to inch!:12.0 Timing:0.000570722998737
+What is 2 divided by 2?:1.0 Timing:0.000526558058236
+What is the 7 digit of fibonacci?:13 Timing:0.00188976182034
+What is the meaning of life?:42 Timing:0.000526558058236
+What is love?:Baby Don't hurt me!! Timing:0.000486125366227
+What is my lucky number?:18 Timing:0.0017435820877
+What is 2 minus 2?:0.0 Timing:0.00197715863922
+What is 2 times 2?:4.0 Timing:0.00170968083055
+Open the door hal!:Im afraid I cant do that alex.houston! Timing:0.00168324407039
+What is the 6 digit of pi?:6.0 Timing:0.00159989052071
+What is the square root of 4?:2.0 Timing:0.001647476689
+My birthday is on December 289!:Not Valid date Timing:0.00167795671836
+My birthday is on April 8!:You are a Aries Timing:0.00164934281324
+My birthday is on April 299!:Not Valid date Timing:0.00165649628952
+My birthday is on April 29!:You are a Taurus Timing:0.00168386611181
+My birthday is on August 289!:Not Valid date Timing:0.00169226367092
+My birthday is on August 8!:You are a Leo Timing:0.00181014051916
+My birthday is on August 28!:You are a Virgo Timing:0.00178619192466
+My birthday is on December 28!:You are a Capricorn Timing:0.0017759282413
+My birthday is on December 8!:You are a Sagittarius Timing:0.00173020819726
+My birthday is on February 8!:You are a Aquarius Timing:0.00174078290133
+My birthday is on February 300!:Not Valid date Timing:0.00170190531286
+My birthday is on February 29!:You are a Pisces Timing:0.00173020819726
+My birthday is on 8 6!:Please Enter a valid month Timing:0.0017115469548
+My birthday is on January 30!:You are a Aquarius Timing:0.00172460982452
+My birthday is on January 8!:You are a Capricorn Timing:0.00180329806359
+My birthday is on January 300!:Not Valid date Timing:0.00179427846306
+My birthday is on July 8!:You are a Cancer Timing:0.00181418378836
+My birthday is on July 289!:Not Valid date Timing:0.00179334540094
+My birthday is on July 28!:You are a Leo Timing:0.00172492084523
+My birthday is on June 28!:You are a Cancer Timing:0.00171714532754
+My birthday is on June 8!:You are a Gemini Timing:0.00176099924733
+My birthday is on June 289!:Not Valid date Timing:0.00179334540094
+My birthday is on March 30!:You are a Aries Timing:0.00179334540094
+My birthday is on March 300!:Not Valid date Timing:0.00165214199961
+My birthday is on March 8!:You are a Pisces Timing:0.00163441381927
+My birthday is on May 29!:You are a Gemini Timing:0.00177437313776
+My birthday is on May 299!:Not Valid date Timing:0.00177499517918
+My birthday is on May 8!:You are a Taurus Timing:0.00166551589005
+My birthday is on November 289!:Not Valid date Timing:0.00173953881849
+My birthday is on November 28!:You are a Sagittarius Timing:0.00175384577105
+My birthday is on November 8!:You are a Scorpio Timing:0.00212675959965
+My birthday is on October 289!:Not Valid date Timing:0.00183564421719
+My birthday is on October 8!:You are a Libra Timing:0.00211618489559
+My birthday is on October 28!:You are a Scorpio Timing:0.00202412276609
+My birthday is on September 298!:Not Valid date Timing:0.00222939643321
+My birthday is on September 28!:You are a Libra Timing:0.00197311537002
+My birthday is on September 8!:You are a Virgo Timing:0.00207886241066
+Convert 12 inch to feet!:1.0 Timing:0.00209721263242
+Convert 1 mile to feet!:5280.0 Timing:0.00207419710004
+Convert 1 inch to feet!:0.0833333333333 Timing:0.00204558319493
+Convert 12 inch to feet!:1.0 Timing:0.00212893674461
+Convert 1 mile to feet!:5280.0 Timing:0.00215195227698
+Convert 12 inch to feet!:1.0 Timing:0.00201168193778
+Convert 1 mile to feet!:5280.0 Timing:0.001960363521
+Convert 12 inch to feet!:1.0 Timing:0.00054677440424
+Convert 1 mile to feet!:5280.0 Timing:0.000530290306729
+Convert 12 inch to feet!:1.0 Timing:0.00194730065128
+What time is it?:10:24 Timing:0.00198555619833
+Is <requirements.txt> in the repo?:Yes Timing:0.00220295967306
+Is <blarg> in the repo?:No Timing:0.00215319635981
+What is the status of <requirements.txt>?:requirements.txt is a dirty repo Timing:0.00249811832472
+What branch is <test\main_test.py>?:ouput Timing:0.00219922742456
+Where did <Job_Story_Traces.txt> come from?:ouput Timing:0.00360628510646
+Is <requirements.txt> in the repo?:Yes Timing:0.00435460092933
+What is the status of <requirements.txt>?:requirements.txt is a dirty repo Timing:0.00390237682025
+What is the status of <unchecked.txt>?:unchecked.txt is a dirty repo Timing:0.00388153843283
+What is the deal with <requirements.txt>?:ouput Timing:0.00420531098961
