@@ -68,7 +68,7 @@ class Git_Utils_Test(TestCase):
         attrs = {'communicate.return_value': ('ouput', 'error')}
         process_mock.configure_mock(**attrs)
         mock_sub_popen.return_value = process_mock
-        test.ask(question='What branch is <test\main_test.py>?')
+        test.ask(question='What branch is <test/main_test.py>?')
         self.assertTrue(mock_sub_popen.called);
 
     @patch('subprocess.Popen')
