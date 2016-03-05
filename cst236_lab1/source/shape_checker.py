@@ -2,168 +2,174 @@
 :mod:`source.source1` -- Example source code
 ============================================
 
-The following example code determines if a set of 3 sides of a triangle is equilateral, scalene or iscoceles
+The following example code determines if a set of 3 sides of a triangle
+is equilateral, scalene or iscoceles
 """
+#pylint: disable= no-member,too-many-boolean-expressions,too-many-arguments
 
-
-def get_triangle_type(a=0, b=0, c=0):
+def get_triangle_type(a_side=0, b_side=0, c_side=0):
     """
     Determine if the given triangle is equilateral, scalene or Isosceles
 
-    :param a: line a
-    :type a: float or int or tuple or list or dict
+    :param a_side: line a
+    :type a_side: float or int or tuple or list or dict
 
-    :param b: line b
-    :type b: float
+    :param b_side: line b
+    :type b_side: float
 
-    :param c: line c
-    :type c: float
+    :param c_side: line c
+    :type c_side: float
 
     :return: "equilateral", "isosceles", "scalene" or "invalid"
     :rtype: str
     """
-    if isinstance(a, (tuple, list)) and len(a) == 3:
-        c = a[2]
-        b = a[1]
-        a = a[0]
+    if isinstance(a_side, (tuple, list)) and len(a_side) == 3:
+        c_side = a_side[2]
+        b_side = a_side[1]
+        a_side = a_side[0]
 
-    if isinstance(a, dict) and len(a.keys()) == 3:
+    if isinstance(a_side, dict) and len(a_side.keys()) == 3:
         values = []
-        for value in a.values():
+        for value in a_side.values():
             values.append(value)
-        a = values[0]
-        b = values[1]
-        c = values[2]
+        a_side = values[0]
+        b_side = values[1]
+        c_side = values[2]
 
-    if not (isinstance(a, (int, float)) and isinstance(b, (int, float)) and isinstance(c, (int, float))):
+    if not (isinstance(a_side, (int, float)) and isinstance(b_side, (int, float))
+            and isinstance(c_side, (int, float))):
         return "invalid"
 
-    if a <= 0 or b <= 0 or c <= 0:
+    if a_side <= 0 or b_side <= 0 or c_side <= 0:
         return "invalid"
 
-    if a == b and b == c:
+    if a_side == b_side and b_side == c_side:
         return "equilateral"
 
-    elif a == b or a == c or b == c:
+    elif a_side == b_side or a_side == c_side or b_side == c_side:
         return "isosceles"
     else:
         return "scalene"
 
 
-def get_rectangle_type(a=0, b=0, c=0, d=0):
+def get_rectangle_type(a_side=0, b_side=0, c_side=0, d_side=0):
     """
     Determine if the given rectangle is a rectangle or square
 
-    :param a: line a
-    :type a: float or int or tuple or list or dict
+    :param a_side: line a
+    :type a_side: float or int or tuple or list or dict
 
-    :param b: line b
-    :type b: float
+    :param b_side: line b
+    :type b_side: float
 
-    :param c: line c
-    :type c: float
+    :param c_side: line c
+    :type c_side: float
 
-    :param d: line d
-    :type d: float
+    :param d_side: line d
+    :type d_side: float
 
     :return: "square", "rectangle" or "invalid"
     :rtype: str
     """
-    if isinstance(a, (tuple, list)) and len(a) == 4:
-        d = a[3]
-        c = a[2]
-        b = a[1]
-        a = a[0]
+    if isinstance(a_side, (tuple, list)) and len(a_side) == 4:
+        d_side = a_side[3]
+        c_side = a_side[2]
+        b_side = a_side[1]
+        a_side = a_side[0]
 
-    if isinstance(a, dict) and len(a.keys()) == 4:
+    if isinstance(a_side, dict) and len(a_side.keys()) == 4:
         values = []
-        for value in a.values():
+        for value in a_side.values():
             values.append(value)
-        a = values[0]
-        b = values[1]
-        c = values[2]
-        d = values[3]
+        a_side = values[0]
+        b_side = values[1]
+        c_side = values[2]
+        d_side = values[3]
 
-    if not (isinstance(a, (int, float)) and isinstance(b, (int, float)) and isinstance(c, (int, float)) and isinstance(
-            d, (int, float))):
+    if not (isinstance(a_side, (int, float)) and isinstance(b_side, (int, float))
+            and isinstance(c_side, (int, float)) and isinstance(d_side, (int, float))):
         return "invalid"
 
-    if a <= 0 or b <= 0 or c <= 0 or d <= 0:
+    if a_side <= 0 or b_side <= 0 or c_side <= 0 or d_side <= 0:
         return "invalid"
 
-    if a == b and b == c and c == d:
+    if a_side == b_side and b_side == c_side and c_side == d_side:
         return "square"
     else:
         return "rectangle"
 
 
-def get_4sided_type(a=0, b=0, c=0, d=0, ab=0, bc=0, cd=0, da=0):
+def get_4sided_type(a_angle=0, b_angle=0, c_angle=0, d_angle=0,
+                    ab_side=0, bc_side=0, cd_side=0, da_side=0):
     """
     Determine if the given 4-sided object is a square, rectangle, rhombus or disconnect
 
-    :param a: line a
-    :type a: float or int or tuple or list or dict
+    :param a_angle: line a
+    :type a_angle: float or int or tuple or list or dict
 
-    :param b: line b
-    :type b: float
+    :param b_angle: line b
+    :type b_angle: float
 
-    :param c: line c
-    :type c: float
+    :param c_angle: line c
+    :type c_angle: float
 
-    :param d: line d
-    :type d: float
+    :param d_angle: line d
+    :type d_angle: float
 
     :param d: corner ab
-    :type ab: float
+    :type ab_side: float
 
     :param d: corner bc
-    :type bc: float
+    :type bc_side: float
 
     :param d: corner cd
-    :type cd: float
+    :type cd_side: float
 
     :param d: corner da
-    :type da: float
+    :type da_side: float
 
     :return: "square", "rhombus", "disconnect", "rectangle" or "invalid"
     :rtype: str
     """
-    if isinstance(a, (tuple, list)) and len(a) == 8:
-        da = a[7]
-        cd = a[6]
-        bc = a[5]
-        ab = a[4]
-        d = a[3]
-        c = a[2]
-        b = a[1]
-        a = a[0]
+    if isinstance(a_angle, (tuple, list)) and len(a_angle) == 8:
+        da_side = a_angle[7]
+        cd_side = a_angle[6]
+        bc_side = a_angle[5]
+        ab_side = a_angle[4]
+        d_angle = a_angle[3]
+        c_angle = a_angle[2]
+        b_angle = a_angle[1]
+        a_angle = a_angle[0]
 
-    if isinstance(a, dict) and len(a.keys()) == 8:
+    if isinstance(a_angle, dict) and len(a_angle.keys()) == 8:
         values = []
-        for value in a.values():
+        for value in a_angle.values():
             values.append(value)
-        a = values[0]
-        b = values[1]
-        c = values[2]
-        d = values[3]
-        ab = values[4]
-        bc = values[5]
-        cd = values[6]
-        da = values[7]
+        a_angle = values[0]
+        b_angle = values[1]
+        c_angle = values[2]
+        d_angle = values[3]
+        ab_side = values[4]
+        bc_side = values[5]
+        cd_side = values[6]
+        da_side = values[7]
 
-    if not (isinstance(a, (int, float)) and isinstance(b, (int, float)) and isinstance(c, (int, float)) and
-            isinstance(d, (int, float)) and isinstance(ab, (int, float)) and isinstance(bc, (
-            int, float)) and isinstance(cd, (int, float)) and isinstance(
-            da, (int, float))):
+    if not (isinstance(a_angle, (int, float)) and isinstance(b_angle, (int, float))
+            and isinstance(c_angle, (int, float)) and
+            isinstance(d_angle, (int, float)) and isinstance(ab_side, (int, float)) and
+            isinstance(bc_side, (int, float)) and
+            isinstance(cd_side, (int, float)) and isinstance(
+                da_side, (int, float))):
         return "invalid"
 
-    if a <= 0 or b <= 0 or c <= 0 or d <= 0 or ab <= 0 or bc <= 0 or cd <= 0 or da <= 0:
+    if a_angle <= 0 or b_angle <= 0 or c_angle <= 0 or \
+                    d_angle <= 0 or ab_side <= 0 or bc_side <= 0 or cd_side <= 0 or da_side <= 0:
         return "invalid"
 
-    if ab + bc + cd + da > 360:
+    if ab_side + bc_side + cd_side + da_side > 360:
         return "disconnect"
-    if a == b and b == c and c == d:
-        if ab == bc == cd == da:
+    if a_angle == b_angle and b_angle == c_angle and c_angle == d_angle:
+        if ab_side == bc_side == cd_side == da_side:
             return "square"
         else:
             return "rhombus"

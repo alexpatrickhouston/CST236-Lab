@@ -5,7 +5,7 @@ What is 2 divided by 2?:1.0
 What is the 7 digit of fibonacci?:13
 What is the meaning of life?:42
 What is love?:Baby Don't hurt me!!
-What is my lucky number?:2
+What is my lucky number?:18
 What is 2 minus 2?:0.0
 What is 2 times 2?:4.0
 Open the door hal!:Im afraid I cant do that alex.houston!
@@ -58,11 +58,11 @@ Convert 1 mile to feet!:5280.0
 Convert 12 inch to feet!:1.0
 Convert 1 mile to feet!:5280.0
 Convert 12 inch to feet!:1.0
-What time is it?:08:01
+What time is it?:10:26
 Is <requirements.txt> in the repo?:Yes
 Is <blarg> in the repo?:No
 What is the status of <requirements.txt>?:requirements.txt is a dirty repo
-What branch is <test\main_test.py>?:ouput
+What branch is <test/main_test.py>?:ouput
 Where did <Job_Story_Traces.txt> come from?:ouput
 Is <requirements.txt> in the repo?:Yes
 What is the status of <requirements.txt>?:requirements.txt is a dirty repo

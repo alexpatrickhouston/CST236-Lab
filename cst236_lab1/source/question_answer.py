@@ -1,5 +1,7 @@
 class QA(object):
+    """question object"""
     def __init__(self, question, answer):
+        """dammit python this is a freaking init"""
         self.question = question
         self.function = None
         self.value = None
@@ -7,4 +9,3 @@ class QA(object):
             self.function = answer
         else:
             self.value = answer
-            # blarg

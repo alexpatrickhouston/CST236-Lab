@@ -1,8 +1,8 @@
 from unittest import TestCase  # imports testing tools
 from source.main import Interface
-from source import  main
+from source import main
 from source.git_utils import get_repo_root, is_repo_dirty, has_diff_files, \
-    has_untracked_files, get_diff_files, get_git_file_info,get_untracked_files, is_file_in_repo
+    has_untracked_files, get_diff_files, get_git_file_info, get_untracked_files, is_file_in_repo
 from mock import MagicMock, Mock, patch
 from plugins.ReqTracer import requirements
 import os
@@ -147,29 +147,26 @@ class Git_Utils_Test(TestCase):
     @patch("source.git_utils.is_repo_dirty")
     @patch("source.git_utils.get_diff_files")
     @patch("source.git_utils.get_untracked_files")
-    def test_up_to_date(self,mock_dirty,mock_get_diff,mock_get_untracked):
+    def test_up_to_date(self, mock_dirty, mock_get_diff, mock_get_untracked):
         mock_get_diff.return_value = []
         mock_get_untracked.return_value = []
-        mock_dirty.return_value =[]
+        mock_dirty.return_value = []
         get_git_file_info("requirements.txt")
-
 
     @patch("source.git_utils.get_diff_files")
     @patch("source.git_utils.get_untracked_files")
-    def test_git_untracked(self,mock_get_diff,mock_get_untracked):
+    def test_git_untracked(self, mock_get_diff, mock_get_untracked):
         mock_get_diff.return_value = os.path.abspath("requirements.txt")
         mock_get_untracked.return_value = []
         print mock_get_untracked.return_value
         get_git_file_info("requirements.txt")
 
-
-
     @patch("source.git_utils.get_untracked_files")
-    def test_untracked(self,mock_get_untracked):
+    def test_untracked(self, mock_get_untracked):
         mock_get_untracked.return_value = os.path.abspath("requirements.txt")
         has_untracked_files("requirements.txt")
 
     @patch("source.git_utils.get_untracked_files")
-    def test__no_untracked(self,mock_get_untracked):
+    def test__no_untracked(self, mock_get_untracked):
         mock_get_untracked.return_value = []
         has_untracked_files("requirements.txt")

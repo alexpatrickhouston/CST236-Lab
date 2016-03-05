@@ -13,6 +13,7 @@ def check_valid_path(func):
             raise Exception('Path {0} does not exist cannot get git file '
                             'info'.format(path))
         return func(path, *args, **kwargs)
+
     return path_checker
 
 
@@ -24,8 +25,8 @@ def is_file_in_repo(path):
     if not os.path.isabs(path):
         path = os.path.abspath(path)
     test_repo = os.path.dirname(path)
-    if(path in get_diff_files(test_repo) or
-       path in get_untracked_files(test_repo)):
+    if (path in get_diff_files(test_repo) or
+                path in get_untracked_files(test_repo)):
         git_logger.debug('%s changed or is untracked in repo %s', path, test_repo)
         return 'No'
     return 'Yes'
@@ -42,22 +43,21 @@ def get_git_file_info(path):
     :returns: script filename, SHA1 hash, date, and author of last time path was modified
     :rtype: tuple
     """
-    if not os.path.isabs(path): # Test case #1
+    if not os.path.isabs(path):  # Test case #1
         path = os.path.abspath(path)
     print path
     test_repo = os.path.dirname(path)
-    if path in get_diff_files(test_repo): # Test case #2
+    if path in get_diff_files(test_repo):  # Test case #2
         git_logger.warning('%s is modified locally', path)
         return '{} has been modified locally'.format(os.path.basename(path))
-    elif path in get_untracked_files(test_repo): # Test case #3
+    elif path in get_untracked_files(test_repo):  # Test case #3
         git_logger.warning('%s is not checked in', path)
         return '{} has been not been checked in'.format(os.path.basename(path))
-    elif is_repo_dirty(test_repo, include_untracked=True): # Test case #4
+    elif is_repo_dirty(test_repo, include_untracked=True):  # Test case #4
         git_logger.warning('%s is contained in a dirty repo', path)
         return '{} is a dirty repo'.format(os.path.basename(path))
 
     return '{} is up to date'.format(os.path.basename(path))
-
 
 
 @check_valid_path
@@ -83,7 +83,7 @@ def is_repo_dirty(path, include_untracked=False):
 
 
 @check_valid_path
-def has_diff_files(path): # 2 cases either true path or false path
+def has_diff_files(path):  # 2 cases either true path or false path
     """
     Check for modified files
 
@@ -100,7 +100,7 @@ def has_diff_files(path): # 2 cases either true path or false path
 
 
 @check_valid_path
-def has_untracked_files(path): # 2 cases either true path or false path
+def has_untracked_files(path):  # 2 cases either true path or false path
     """
     Check for untracked files
 
@@ -117,7 +117,7 @@ def has_untracked_files(path): # 2 cases either true path or false path
 
 
 @check_valid_path
-def get_file_info(path, full=False): # 1 case should cover all code if it gets called
+def get_file_info(path, full=False):  # 1 case should cover all code if it gets called
     """
     Get the last commit information for the file specified
 
@@ -138,7 +138,8 @@ def get_file_info(path, full=False): # 1 case should cover all code if it gets c
 
 
 @check_valid_path
-def get_diff_files(path, include_staged=True): # should only be 2 cases 1 case would work but have to test for nonstaged
+def get_diff_files(path,
+                   include_staged=True):  # should only be 2 cases 1 case would work but have to test for nonstaged
     """
     Return a list of all modified files
 
@@ -169,7 +170,7 @@ def get_diff_files(path, include_staged=True): # should only be 2 cases 1 case w
 
 
 @check_valid_path
-def get_untracked_files(path): # single test case
+def get_untracked_files(path):  # single test case
     """
     Return a list of all untracked files
 
@@ -192,7 +193,7 @@ def get_untracked_files(path): # single test case
 
 
 @check_valid_path
-def get_repo_root(path): # 1 case to cover all 2 to fully test
+def get_repo_root(path):  # 1 case to cover all 2 to fully test
     """
     Determine the root of a repo
 
@@ -209,7 +210,7 @@ def get_repo_root(path): # 1 case to cover all 2 to fully test
 
 
 @check_valid_path
-def get_repo_branch(path): # 1 case to cover all 2 to fully test
+def get_repo_branch(path):  # 1 case to cover all 2 to fully test
     """
     Determine the current branch of the repo
 
@@ -226,7 +227,7 @@ def get_repo_branch(path): # 1 case to cover all 2 to fully test
 
 
 @check_valid_path
-def get_repo_url(path): # 1 case to cover all 2 to fully test
+def get_repo_url(path):  # 1 case to cover all 2 to fully test
     """
     Determine the url of the repo
 
@@ -264,4 +265,3 @@ def git_execute(params=None, path=os.getcwd()):
         git_logger.error('Error occurred when executing git command(%s): %s', params,
                          stderr.strip())
     return stdout.strip()
-
