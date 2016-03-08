@@ -1,14 +1,14 @@
 What is 2 plus 2?:4.0
-What is my computers name?:The name of this computer is W207-3020-05
+What is my computers name?:The name of this computer is Dat_Ashe
 Convert 1 feet to inch!:12.0
 What is 2 divided by 2?:1.0
 What is the 7 digit of fibonacci?:13
 What is the meaning of life?:42
 What is love?:Baby Don't hurt me!!
-What is my lucky number?:18
+What is my lucky number?:19
 What is 2 minus 2?:0.0
 What is 2 times 2?:4.0
-Open the door hal!:Im afraid I cant do that alex.houston!
+Open the door hal!:Im afraid I cant do that Dat Ashe!
 What is the 6 digit of pi?:6.0
 What is the square root of 4?:2.0
 My birthday is on December 289!:Not Valid date
@@ -58,7 +58,7 @@ Convert 1 mile to feet!:5280.0
 Convert 12 inch to feet!:1.0
 Convert 1 mile to feet!:5280.0
 Convert 12 inch to feet!:1.0
-What time is it?:10:26
+What time is it?:14:56
 Is <requirements.txt> in the repo?:Yes
 Is <blarg> in the repo?:No
 What is the status of <requirements.txt>?:requirements.txt is a dirty repo

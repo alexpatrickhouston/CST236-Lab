@@ -108,7 +108,7 @@ class Git_Utils_Test(TestCase):
         attrs = {'communicate.return_value': ('ouput', 'error')}
         process_mock.configure_mock(**attrs)
         mock_sub_popen.return_value = process_mock
-        get_repo_root("htmlcov\index.html")
+        get_repo_root("requirements.txt")
         self.assertTrue(mock_sub_popen.called);
 
     @patch('subprocess.Popen')
